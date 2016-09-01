@@ -1,7 +1,7 @@
-// sets grid rows and columns and the size of each square
+7// sets grid rows and columns and the size of each square
 var rows = 10;
 var cols = 10;
-var squareSize = 50;
+var squareSize = 100;
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -18,7 +18,7 @@ var letterConversion = {
 	"G": 6,
 	"H": 7,
 	"I": 8,
-	"J": 9
+	"J": 9,
 }
 
 // makes the grid columns and rows
