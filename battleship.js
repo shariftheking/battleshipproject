@@ -1,7 +1,7 @@
 7// sets grid rows and columns and the size of each square
 var rows = 10;
 var cols = 10;
-var squareSize = 100;
+var squareSize = 50;
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -20,6 +20,7 @@ var letterConversion = {
 	"I": 8,
 	"J": 9,
 }
+ var letterArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
@@ -34,6 +35,7 @@ for (i = 0; i < cols; i++) {
 		square.className = "boardSquare";
 
 		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
+		square.textContent = letterArray[j] + (i + 1)
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -44,7 +46,16 @@ for (i = 0; i < cols; i++) {
 		square.style.left = leftPosition + 'px';
 	}
 }
-
+var userInput;
+var convertedRow;
+var rowLetter;
+var column;
+//var battleshipGuess = gameBoard[rowLetter][column];
+/*var twoDimensionalArray = [
+ ["a", "b", "c"],
+ ["d", "e", "f"],
+ ["g", "h", "i"]
+ ]; */
 // Hardcoded 2D array to indicate where the ships are placed
 var gameBoard = [
 				[0,0,0,1,1,1,1,0,0,0],
@@ -52,15 +63,23 @@ var gameBoard = [
 				[0,0,0,0,0,0,0,0,0,0],
 				[0,0,0,0,0,0,1,0,0,0],
 				[0,0,0,0,0,0,1,0,0,0],
-				[1,0,0,0,0,0,1,1,1,1],
+				[1,0,0,0,1,1,1,1,1,1],
 				[1,0,0,0,0,0,0,0,0,0],
-				[1,0,0,1,0,0,0,0,0,0],
-				[1,0,0,1,0,0,0,0,0,0],
+				[1,0,0,0,0,0,0,0,0,0],
+				[1,0,0,0,0,0,0,0,0,0],
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
 function fireTorpedo() {
+userInput = document.getElementById("exampleInput").value;
+rowLetter = userInput.substring(0,1);
+convertedRow = letterConversion[rowLetter];
+console.log(rowLetter);
+column = userInput.substring(1,3)
+console.log(column);
 
-	// Your game logic will go here!
+if(gameBoard[convertedRow][column]) {
+	document.getElementById("s" + convertedRow + (column - 1)).style.background = "red";
+} else document.getElementById("s" + convertedRow + (column - 1)).style.background = "grey";
 
 }
