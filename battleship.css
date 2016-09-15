@@ -3,8 +3,16 @@ body {
     width: 70%;
     max-width: 950px;
     /*background-color: gold;*/
+    img-size padding: 600px;
 }
+html {
+  background: url(http://cdn.akamai.steamstatic.com/steam/apps/227900/header.jpg?t=1447357173) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
+}
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -15,8 +23,11 @@ p, button, input {
     line-height: 1.4em;
     color: #333;
 	margin-bottom:1em;
+  text-decoration-color: ;
 }
-
+p {
+  color: red;
+}
 #gameboard {
 	position:relative;
 	margin:0 auto 2em auto;

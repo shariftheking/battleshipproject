@@ -21,6 +21,7 @@ var letterConversion = {
 	"J": 9,
 }
  var letterArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+ var hitCount = 0;
 
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
@@ -50,6 +51,7 @@ var userInput;
 var convertedRow;
 var rowLetter;
 var column;
+var hitCount = 0;
 //var battleshipGuess = gameBoard[rowLetter][column];
 /*var twoDimensionalArray = [
  ["a", "b", "c"],
@@ -80,6 +82,15 @@ console.log(column);
 
 if(gameBoard[convertedRow][column]) {
 	document.getElementById("s" + convertedRow + (column - 1)).style.background = "red";
-} else document.getElementById("s" + convertedRow + (column - 1)).style.background = "grey";
+	hitCount++;
+	console.log(hitCount);
+
+} else {
+	 document.getElementById("s" + convertedRow + (column - 1)).style.background = "grey";
+ }
+ if(hitCount == 1) {
+
+ $("#instructions").text("good job you have stoped the middle east");
+ }
 
 }
